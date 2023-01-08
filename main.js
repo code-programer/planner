@@ -9,6 +9,7 @@ function encode(q){
     return w.toString().replaceAll(",","")
 }
 var db = {};
+
 //Users Database
 db.users = {};
 db.users.id = "c5f82d22-0551-4566-8a3b-63a64c40c7fa";
@@ -78,7 +79,8 @@ db.get = function(){
 db.load = function(w){
   db.id = db[w].id;
   db.bas = db[w].bas;
-  return db.get()
+db.get()
+  return db.data;
 }
 db.save = function(k, v, w){
   db.id = db[w].id;

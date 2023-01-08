@@ -10,8 +10,7 @@
   currentDiv.appendChild(newDiv);
 }
 	function send(){
-      db.load("chat")
-	  var chats = JSON.parse(db.data);
+          	var chats = JSON.parse(db.load("chat"));
         var v = document.getElementById("in").value;
          var h = chats[c].push(v); 
           db.save(sessionStorage.c, h, "chat")
@@ -25,8 +24,7 @@
   window.addEventListener('keyup', presend);
 
   function reload(){
-    db.load("chat")
-	  var chats = JSON.parse(db.data);
+    	var chats = JSON.parse(db.load("chat"));
 	  var c = new URLSearchParams(window.location.search).get('c');
     sessionStorage.setItem("c", c)
     

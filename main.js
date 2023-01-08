@@ -20,11 +20,6 @@ db.chat = {};
 db.chat.id = "56b4ae6b-0410-4642-8a81-6754ad1b1094";
 db.chat.bas = "db";
 
-//Plans Database
-db.plan = {};
-db.plan.id = "8b2fa965-f032-4c59-bcbf-b7459d7fa524";
-db.plan.bas = "db";
-
 //Encode / decode
 function decode(q){
   var w = q.split("");
@@ -80,7 +75,6 @@ db.load = function(w){
   db.id = db[w].id;
   db.bas = db[w].bas;
 db.get()
-  return db.data;
 }
 db.save = function(k, v, w){
   db.id = db[w].id;

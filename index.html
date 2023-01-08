@@ -1,7 +1,7 @@
 <html>
 <div scroll="true" id="screen"></div>
 <br><br>
-<input id="in" onfocusout="got()" placeholder="Busca">
+<input id="in" placeholder="Busca">
 <script>
 	function write(html) {
   var newDiv = document.createElement("div");
@@ -26,12 +26,12 @@
   function reload(){
     	var chats = JSON.parse(db.load("chat"));
 	  var c = new URLSearchParams(window.location.search).get('c');
-    sessionStorage.setItem("c", c)
+    	sessionStorage.setItem("c", c)
     
     var chat = chats[c];
     for(m in chat){
       write(chat[m] + "<br><br><br>")
-      document.getElementById("in").value = ""
+      document.getElementById("in").value = "";
 	    document.getElementById("in").focus()
       document.getElementById("screen").scrollTo(0,9000 * m)
     }

@@ -1,0 +1,85 @@
+<html>
+<div scroll="true" id="screen"></div>
+<br><br>
+<input id="in" onfocusout="got()" placeholder="Busca">
+<script>
+	function write(html) {
+  var newDiv = document.createElement("div");
+  newDiv.innerHTML = html;
+  var currentDiv = document.getElementById("screen");
+  currentDiv.appendChild(newDiv);
+}
+	function send(){
+      db.load("chat")
+	  var chats = JSON.parse(db.data);
+        var v = document.getElementById("in").value;
+         var h = chats[c].push(v); 
+          db.save(sessionStorage.c, h, "chat")
+        reload()
+    }
+     function presend(e){
+      if(e.keyCode == 13 && document.getElementById("in").value != ""){
+        send()
+      }
+     }
+  window.addEventListener('keyup', presend);
+
+  function reload(){
+    db.load("chat")
+	  var chats = JSON.parse(db.data);
+	  var c = new URLSearchParams(window.location.search).get('c');
+    sessionStorage.setItem("c", c)
+    
+    var chat = chats[c];
+    for(m in chat){
+      write(chat[m] + "<br><br><br>")
+      document.getElementById("in").value = ""
+	    document.getElementById("in").focus()
+      document.getElementById("screen").scrollTo(0,9000 * m)
+    }
+  }
+</script>
+  <script src="main.js"></script>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@200;800&display=swap');
+	#screen{
+		overflow-y: scroll;
+		height: 365px;
+		max-height: 356px;
+		font-family: 'Stick No Bills', sans-serif;
+		font-size: 30px;
+		color: #A26769;
+	}
+	body{
+		background-color: ghostwhite;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+	#in{
+		all: unset;
+		background-color: #D5B9B2;
+		width: 300px;
+		height: 50px;
+		border-radius: 10px;
+		font-size: 30px;
+	}
+	#in:focus{
+		all: unset;
+		background-color: #D5B9B2;
+		width: 300px;
+		height: 50px;
+		border: 5px solid #A26769;
+		border-radius: 10px;
+		font-size: 30px;
+		font-weight: bold;
+		font-family: 'Stick No Bills', sans-serif;
+		color: #A26769;
+	}
+	::placeholder{
+		font-family: 'Stick No Bills', sans-serif;
+		font-weight: bold;
+		color: #A26769;
+	}
+</style>
+</html>

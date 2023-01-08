@@ -68,13 +68,14 @@ db.get = function(){
 	  	.then(response => response.text())
 	  	.then(result => db.data = result)
 	  	.catch(error => console.log('error', error));
+	return db.data;
 }
 
 //db.load & db.save
 db.load = function(w){
   db.id = db[w].id;
   db.bas = db[w].bas;
-db.get()
+  return db.get();
 }
 db.save = function(k, v, w){
   db.id = db[w].id;

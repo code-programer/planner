@@ -10,12 +10,13 @@
   currentDiv.appendChild(newDiv);
 }
 	function send(){
-          	var chats = JSON.parse(db.load("chat"));
-        var v = document.getElementById("in").value;
-         var h = chats[c].push(v); 
-          db.save(sessionStorage.c, h, "chat")
-        reload()
-    }
+          	var chats = JSON.parse(sessionStorage.ch)
+        	var v = document.getElementById("in").value;
+         	var h = chats[c]; 
+		h.push(v)
+         	db.save(sessionStorage.c, h.toString(), "chat")
+        	reload()
+    	}
      function presend(e){
       if(e.keyCode == 13 && document.getElementById("in").value != ""){
         send()
@@ -23,18 +24,24 @@
      }
   window.addEventListener('keyup', presend);
 
+	function soload(chato){
+		var chats = JSON.parse(chato);
+		var c = new URLSearchParams(window.location.search).get('c');
+    		sessionStorage.setItem("c", c)
+    		sessionStorage.setItem("ch",chats[c])
+		
+    		var chati = chats[c];
+		var chat = chati.split(",");
+		
+    		for(m in chat){
+     			write(chat[m] + "<br><br><br>")
+      			document.getElementById("in").value = "";
+	    		document.getElementById("in").focus()
+      			document.getElementById("screen").scrollTo(0,9000 * m)
+    		}
+	}
   function reload(){
-    	var chats = JSON.parse(db.load("chat"));
-	  var c = new URLSearchParams(window.location.search).get('c');
-    	sessionStorage.setItem("c", c)
-    
-    var chat = chats[c];
-    for(m in chat){
-      write(chat[m] + "<br><br><br>")
-      document.getElementById("in").value = "";
-	    document.getElementById("in").focus()
-      document.getElementById("screen").scrollTo(0,9000 * m)
-    }
+    	var chats = db.load("chat");
   }
 </script>
   <script src="main.js"></script>

@@ -66,7 +66,7 @@ db.get = function(){
 	
 	fetch("https://getpantry.cloud/apiv1/pantry/" + db.id + "/basket/" + db.bas + "/", requestOptions)
 	  	.then(response => response.text())
-	  	.then(result => db.data = result)
+	  	.then(result => soload(result))
 	  	.catch(error => console.log('error', error));
 	return db.data;
 }
@@ -75,7 +75,7 @@ db.get = function(){
 db.load = function(w){
   db.id = db[w].id;
   db.bas = db[w].bas;
-  return db.get();
+  db.get();
 }
 db.save = function(k, v, w){
   db.id = db[w].id;

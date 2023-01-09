@@ -1,13 +1,3 @@
-const lett = 'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ-.·$%&/()=?¿!'.split("");
-var cod = 'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ-.·$%&/()=?¿!'.split("");
-cod.reverse()
-function encode(q){
-  var w = q.split("");
-    for(a in w){
-      w[a] = cod[lett.indexOf(w[a])];
-    }
-    return w.toString().replaceAll(",","")
-}
 var db = {};
 
 //Users Database
@@ -20,15 +10,6 @@ db.chat = {};
 db.chat.id = "56b4ae6b-0410-4642-8a81-6754ad1b1094";
 db.chat.bas = "db";
 
-//Encode / decode
-function decode(q){
-  var w = q.split("");
-    for(a in w){
-      w[a] = lett[cod.indexOf(w[a])];
-    }
-    return w.toString().replaceAll(",","")
-}
- 
 //define db functions
 db.add = function(k, v){
 	var myHeaders = new Headers();

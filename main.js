@@ -42,7 +42,7 @@ db.get = function(bas="ok"){
 };
 
 $.ajax(settings).done(function (response) {
-  soloload(response);
+  soload(response);
 });
 }
 

@@ -30,7 +30,7 @@
   window.addEventListener('keyup', presend);
 
 	function soload(chato){
-		var chats = JSON.parse(chato);
+		var chats = chato;
 		var c = new URLSearchParams(window.location.search).get('c');
     		sessionStorage.setItem("c", c)
     		sessionStorage.setItem("ch",chats[c])

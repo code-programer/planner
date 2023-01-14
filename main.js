@@ -1,12 +1,12 @@
 var db = {}
 db.data;
 
-function uptade(a, b, binId="63c2bd75dfc68e59d58269b6"){
+function uptade(a, b, binId="63c2bd75dfc68e59d58269b6", callback="console.log"){
 	let req = new XMLHttpRequest();
 	
 	req.onreadystatechange = () => {
   		if (req.readyState == XMLHttpRequest.DONE) {
-    		console.log(req.responseText);
+    			eval(callback + "(" + req.responseText + ")")
 		  }
 	};
 	

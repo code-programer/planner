@@ -3,6 +3,11 @@
 <br><br>
 <input id="in" placeholder="Busca">
 <script>
+	window.onload = function(){reload()}
+	function nowreLoad(e){
+		console.log(e)
+		reload()
+	}
 	function write(html) {
   var newDiv = document.createElement("div");
   newDiv.innerHTML = html;
@@ -15,8 +20,7 @@
         	var v = document.getElementById("in").value;
          	var h = sessionStorage.ch.split(","); 
 		h.push(v)
-         	uptade(c, h)
-        	reload()
+         	uptade(c, h, "63c2bd75dfc68e59d58269b6", "nowreLoad")
 		
 		document.getElementById("in").value = "";
     	}

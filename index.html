@@ -11,13 +11,11 @@
 }
 	function send(){
 		var c = new URLSearchParams(window.location.search).get('c');
-		db.id = db.chat.id;
-		db.bas = db.chat.bas;
 		
         	var v = document.getElementById("in").value;
          	var h = sessionStorage.ch.split(","); 
 		h.push(v)
-         	db.add(c, JSON.stringify(h))
+         	uptade(c, h)
         	reload()
 		
 		document.getElementById("in").value = "";

@@ -8,12 +8,13 @@
 		console.log(e)
 		reload()
 	}
-	function write(html) {
-  var newDiv = document.createElement("div");
-  newDiv.innerHTML = html;
-  var currentDiv = document.getElementById("screen");
-  currentDiv.appendChild(newDiv);
-}
+	function write(html, calas) {
+  		var newDiv = document.createElement("div");
+  		newDiv.innerHTML = html;
+ 		var currentDiv = document.getElementById("screen");
+  		currentDiv.appendChild(newDiv);
+		newDiv.classList.add(calas);
+	}
 	function send(){
 		var c = new URLSearchParams(window.location.search).get('c');
 		
@@ -40,7 +41,14 @@
     		var chat = chats[c];
 		document.getElementById("screen").innerHTML = "";
     		for(m in chat){
-     			write(chat[m] + "<br><br><br>")
+			var user;
+			if(chat[m].user = localStorage.usr){
+				user = "mine";
+			}
+			else{
+				user = "notmine";
+			}
+     			write(chat[m].text + "<br><br><br>", user)
     		}
 	}
   function reload(){

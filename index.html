@@ -20,7 +20,7 @@
       var chats = e[localStorage.usr].chats;
       console.log(chats)
       for(c in chats){
-        document.getElementById("scr").innerHTML = document.getElementById("scr").innerHTML + "<a href='https://code-programer.github.io/planner/chat?&c=" + chats[c] + "'>" + chats[c] + "</a><br>"
+        document.getElementById("scr").innerHTML = document.getElementById("scr").innerHTML + "<a href='https://code-programer.github.io/planner/chat?&c=" + chats[c].id + "'>" + chats[c].name + "</a><br>"
       }
     }
     window.onload = function(){uget("63c44219dfc68e59d5834ba0","loadChats")

@@ -1,13 +1,14 @@
 <html>
   <body>
-    <div id="screen"></div> 
+    <div id="scr"></div> 
   </body>
   <script src="main.js"></script>
   <script>
     function loadChats(e){
       var chats = e[localStorage.usr].chats;
-      for(chat in chats){
-        document.getElementById("screen").innerHTML = document.getElementById("screen").innerHTM + "<a href='https://code-programer.github.io/planner/chat?&c=" + chats[chat] + "'>" + chats[chat] + "</a><br>"
+      console.log(chats)
+      for(c in chats){
+        document.getElementById("scr").innerHTML = document.getElementById("screen").innerHTML + "<a href='https://code-programer.github.io/planner/chat?&c=" + chats[c] + "'>" + chats[c] + "</a><br>"
       }
     }
     window.onload = function(){eget("63c44219dfc68e59d5834ba0","loadChats")}

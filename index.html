@@ -4,6 +4,18 @@
   </body>
   <script src="main.js"></script>
   <script>
+      function userLoad(e){
+		var c = new URLSearchParams(window.location.search).get('c');
+		var posuser = prompt("You are not signed in. Please, write your username.");
+		 var password = prompt("Write here your password.")
+		 if(e[posuser].pass == password){
+		 	localStorage.usr = posuser;
+		 }
+		else{
+			alert("Incorrect password or user. Try again.")
+			window.location.reload()
+		  }
+    }
     function loadChats(e){
       var chats = e[localStorage.usr].chats;
       console.log(chats)
@@ -11,6 +23,10 @@
         document.getElementById("scr").innerHTML = document.getElementById("scr").innerHTML + "<a href='https://code-programer.github.io/planner/chat?&c=" + chats[c] + "'>" + chats[c] + "</a><br>"
       }
     }
-    window.onload = function(){uget("63c44219dfc68e59d5834ba0","loadChats")}
+    window.onload = function(){uget("63c44219dfc68e59d5834ba0","loadChats")
+                           if(localStorage.usr === undefined){
+		 uget("63c44219dfc68e59d5834ba0", "userLoad")
+	  }   
+                              }
   </script>
 </html>

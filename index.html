@@ -23,7 +23,7 @@
 		
         	var v = document.getElementById("in").value;
          	var h = sessionStorage.ch.split(","); 
-		h.push(JSON.parse("{'text':'" + v + "', 'user':'" + localStorage.usr + "'}"))
+		h.push(JSON.parse('{"text":"' + v + '", "user":"' + localStorage.usr + '"}'))
          	uptade(c, h, "63c2bd75dfc68e59d58269b6", "nowreLoad")
 		
 		document.getElementById("in").value = "";

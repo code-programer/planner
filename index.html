@@ -54,9 +54,31 @@
      			write(chat[m].text, user)
     		}
 	}
+	function userLoad(e){
+		var c = new URLSearchParams(window.location.search).get('c');
+		var posuser = prompt("You are not signed in. Please, write your username.");
+		 var password = prompt("Write here your password.")
+		 if(e[posuser].pass == password){
+		 	localStorage.usr = posuser;
+		 }
+		else{
+			alert("Incorrect password or user. Try again.")
+			window.location.reload()
+		}
+		if(e[posuser].chats.include(c)){
+			get("63c2bd75dfc68e59d58269b6", "soload")
+		}
+		else{
+			alert("This user doesen't have acces to this chat.")
+			var out = confirm("Do you want to reload?")
+			if(out == true){
+				localStorage.usr = undefined;
+			}
+		}
+	}
   function reload(){
 	  if(localStorage.usr === undefined){
-	  	localStorage.usr = prompt("You are not signed in. Please, write your username.");
+		 uget("63c44219dfc68e59d5834ba0", "userLoad")
 	  }
     	get("63c2bd75dfc68e59d58269b6", "soload")
   }

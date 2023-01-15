@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <div id="screen"></div> 
+  </body>
+  <script src="main.js"></script>
+  <script>
+    function loadChats(e){
+      var chats = e[localStorage.usr].chats;
+      for(chat in chats){
+        document.getElementById("screen").innerHTML = document.getElementById("screen").innerHTM + "<a href='https://code-programer.github.io/planner/chat?&c=" + chats[chat] + "'>" + chats[chat] + "</a><br>"
+      }
+    }
+    window.onload = function(){eget("63c44219dfc68e59d5834ba0","loadChats")}
+  </script>
+</html>

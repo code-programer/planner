@@ -22,7 +22,7 @@
 		var c = new URLSearchParams(window.location.search).get('c');
 		
         	var v = document.getElementById("in").value;
-         	var h = sessionStorage.ch.split(","); 
+         	var h = JSON.parse(sessionStorage.ch)); 
 		h.push(JSON.parse('{"text":"' + v + '", "user":"' + localStorage.usr + '"}'))
          	uptade(c, h, "63c2bd75dfc68e59d58269b6", "nowreLoad")
 		
@@ -39,7 +39,7 @@
 		var chats = chato;
 		var c = new URLSearchParams(window.location.search).get('c');
     		sessionStorage.setItem("c", c)
-    		sessionStorage.setItem("ch",chats[c])
+    		sessionStorage.setItem("ch",JSON.stringify(chats[c]))
 		
     		var chat = chats[c];
 		document.getElementById("screen").innerHTML = "";

@@ -1,10 +1,29 @@
 <html>
   <body>
     <div id="scr"></div> 
-	  <button onclick="eval('localStorage.usr = undefined')">Log out</button> | <button onclick="tryLoad()">Log in<button> | <button onclick="createAccount()">
+	  <button onclick="eval('localStorage.usr = undefined')">Log out</button> | <button onclick="tryLoad()">Log in<button> | <button onclick="tryCreare()">Create account</button>
   </body>
   <script src="main.js"></script>
   <script>
+	  function createUsmr(e){
+	  	uget("63c54a8c15ab31599e37f4e6","createUsr")
+	  }
+	  function createUsr(e){
+	  	var user = prompt("Input your new user.")
+		if(res.users.include(user)){
+			alert("User already taken.")
+		}
+		else{
+			res.users.push("user")
+			var password("Input your new password")
+			uuptade(user,{"pass":password,"chats":["key"]})
+			ruptade("users",res.users)
+			
+		}
+	  }
+	  function tryCreate(){
+	  	rget("63c54a8c15ab31599e37f4e6","createUsmr")
+	  }
 	  function tryLoad(){
 		 uget("63c44219dfc68e59d5834ba0", "userLoad")
 	  }

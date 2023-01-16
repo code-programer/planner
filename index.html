@@ -1,9 +1,13 @@
 <html>
   <body>
     <div id="scr"></div> 
+	  <button onclick="eval('localStorage.usr = undefined')">Log out</button> | <button onclick="tryLoad()">Log in<button> | <button onclick="createAccount()">
   </body>
   <script src="main.js"></script>
   <script>
+	  function tryLoad(){
+		 uget("63c44219dfc68e59d5834ba0", "userLoad")
+	  }
       function userLoad(e){
 		var c = new URLSearchParams(window.location.search).get('c');
 		var posuser = prompt("You are not signed in. Please, write your username.");
@@ -20,12 +24,13 @@
       var chats = e[localStorage.usr].chats;
       console.log(chats)
       for(c in chats){
-        document.getElementById("scr").innerHTML = document.getElementById("scr").innerHTML + "<a href='https://code-programer.github.io/planner/chat?&c=" + chats[c].id + "'>" + chats[c].name + "</a><br>"
+        document.getElementById("scr").innerHTML = document.getElementById("scr").innerHTML + "<a href='https://code-programer.github.io/planner/chat?rea&c=" + chats[c].id + "'>" + chats[c].name + "</a><br>"
       }
     }
-    window.onload = function(){uget("63c44219dfc68e59d5834ba0","loadChats")
-                           if(localStorage.usr === undefined){
-		 uget("63c44219dfc68e59d5834ba0", "userLoad")
+    window.onload = function(){
+	    uget("63c44219dfc68e59d5834ba0","loadChats")
+	    if(localStorage.usr === undefined){
+		alert("You are not logged in.")
 	  }   
                               }
   </script>

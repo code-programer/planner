@@ -9,14 +9,15 @@
 	  	uget("63c54a8c15ab31599e37f4e6","createUsr")
 	  }
 	  function createUsr(e){
-	  	var user = prompt("Input your new user.")
-		if(res.data.users.includes(user)){
+	  	var userdo = prompt("Input your new user.")
+		if(res.data.users.includes(userdo)){
 			alert("User already in use.")
 		}
 		else{
-			res.data.users.push(user)
+			res.data.users.push(userdo)
+			console.log(res.data.users)
                         var pass = prompt("Input new password");
-			uuptade(user, {"pass":pass,"chats":["k"]})                                                               
+			uuptade(userdo, {"pass":pass,"chats":["k"]})                                                               
 			ruptade("users",res.data.users)
 		}
                                

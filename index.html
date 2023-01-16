@@ -10,11 +10,11 @@
 	  }
 	  function createUsr(e){
 	  	var user = prompt("Input your new user.")
-		if(res.users.include(user)){
+		if(res.data.users.include(user)){
 			alert("User already taken.")
 		}
 		else{
-			res.users.push("user")
+			res.data.users.push("user")
 			var password = prompt("Input your new password")
 			uuptade(user,{"pass":password,"chats":["key"]})
 			ruptade("users",res.users)

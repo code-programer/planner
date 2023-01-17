@@ -28,11 +28,9 @@
 		db.data[newId] = {newId: [{'text': localStorage.usr + ' created this chat.', 'user':'admin'}]};
 		update(newId, db.data[newId])
 	  }
-	  function tryNewChat(e){
-	  	get("63c2bd75dfc68e59d58269b6","tryNewDo")
-	  }
 	  function tryNewUser(e){
-	  	uget("63c54a8c15ab31599e37f4e6","tryNewChat")
+		  get()
+	  	uget("63c54a8c15ab31599e37f4e6","tryNewDo")
 	  }
 	  function tryNew(){
 	  	rget("63c54a8c15ab31599e37f4e6","tryNewUser")

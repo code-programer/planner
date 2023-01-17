@@ -12,7 +12,8 @@
 	  function tryNewDo(e){
 	  	var newChat = prompt("New chat name")
 		var newId = newChat + Math.floor(Math.random() * 100000000) + newChat;
-		var users = prompt("Users that will join the chat").splice(",")
+		var users = prompt("Users that will join the chat (separated by ', ')").split(", ")
+		users.push(localStorage.usr)
 		res.data.chats.push(newId)
 		ruptade("chats", res.data.chats)
 		for(usere in users){

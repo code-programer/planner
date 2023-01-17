@@ -22,7 +22,7 @@ function uptade(a, b, binId="63c2bd75dfc68e59d58269b6", callback="console.log"){
 	req.send(JSON.stringify(db.data));
 }
 
-function ruptade(a, b, binId="63c54a8c15ab31599e37f4e6", callback="console.log"){
+function ruptade(a, b, yac, binId="63c54a8c15ab31599e37f4e6", callback="console.log"){
 	let req = new XMLHttpRequest();
 	
 	req.onreadystatechange = () => {
@@ -35,7 +35,7 @@ function ruptade(a, b, binId="63c54a8c15ab31599e37f4e6", callback="console.log")
 	req.setRequestHeader("Content-Type", "application/json");
 	req.setRequestHeader("X-Master-Key", "$2b$10$GQBXgX0qtSt9SMrLTUYkle8r3ine3QESBb8jK69jddclQRRmMufvS");
 	res.data[a] = b;
-	req.send(JSON.stringify(db.data));
+	req.send(JSON.stringify(res.data));
 }
 user.data;
 function uuptade(a, b, binId="63c44219dfc68e59d5834ba0", callback="console.log"){
@@ -51,7 +51,7 @@ function uuptade(a, b, binId="63c44219dfc68e59d5834ba0", callback="console.log")
 	req.setRequestHeader("Content-Type", "application/json");
 	req.setRequestHeader("X-Master-Key", "$2b$10$GQBXgX0qtSt9SMrLTUYkle8r3ine3QESBb8jK69jddclQRRmMufvS");
 	user.data[a] = b;
-	req.send(JSON.stringify(db.data));
+	req.send(JSON.stringify(user.data));
 }
 
 function get(binId="63c2bd75dfc68e59d58269b6", callback="console.log"){

@@ -5,10 +5,37 @@
 	</head>
   <body>
     <div id="scr"></div> 
-	  <button onclick="eval('localStorage.usr = undefined')">Log out</button> | <button onclick="tryLoad()">Log in</button> | <button onclick="tryCreate()">Create account</button>
+	  <button onclick="eval('localStorage.usr = undefined')">Log out</button> | <button onclick="tryLoad()">Log in</button> | <button onclick="tryCreate()">Create account</button> | <button onclick="tryNew()">New Chat</button>	  
   </body>
   <script src="main.js"></script>
   <script>
+	  function tryNewDo(e){
+	  	var newChat = prompt("New chat name")
+		var newId = newChat + Math.floor(Math.random() * 100000000) + newChat;
+		var users = prompt("Users that will join the chat").splice(",")
+		res.data.chats.push(newId)
+		ruptade("chats", res.data.chats)
+		for(usere in users){
+			if(res.data.users.includes(usere)){
+				user.data[user].chats.push({'name': newChat, 'id': newId})
+				uuptade(usere, user.data[usere])
+			}
+			else{
+				console.log("Unexisting user.")
+			}
+		}
+		db.data[newId] = {newId: [{'text': localStorage.usr + ' created this chat.', 'user':'admin']};
+		update(newId, db.data[newId])
+	  }
+	  function tryNewChat(e){
+	  	get("63c2bd75dfc68e59d58269b6","tryNewDo")
+	  }
+	  function tryNewUser(e){
+	  	uget("63c54a8c15ab31599e37f4e6","tryNewChat")
+	  }
+	  function tryNew(){
+	  	rget("63c54a8c15ab31599e37f4e6","tryNewUser")
+	  }
 	  function createUsmr(e){
 	  	uget("63c54a8c15ab31599e37f4e6","createUsr")
 	  }

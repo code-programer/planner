@@ -25,8 +25,7 @@
 				console.log("Unexisting user.")
 			}
 		}
-		db.data[newId] = [];
-		update(newId, db.data[newId])
+		update(newId, [{'text':'hello','user':localStorage.usr}])
 	  }
 	  function tryNewUser(e){
 		  get()

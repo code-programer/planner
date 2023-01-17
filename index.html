@@ -24,7 +24,7 @@
 				console.log("Unexisting user.")
 			}
 		}
-		db.data[newId] = {newId: [{'text': localStorage.usr + ' created this chat.', 'user':'admin']};
+		db.data[newId] = {newId: [{'text': localStorage.usr + ' created this chat.', 'user':'admin'}]};
 		update(newId, db.data[newId])
 	  }
 	  function tryNewChat(e){

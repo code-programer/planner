@@ -25,7 +25,7 @@
 				console.log("Unexisting user.")
 			}
 		}
-		eval("db.data." + newId + " = {'" + newId + "': [{'text': '" + localStorage.usr + "' + ' created this chat.', 'user':'admin'}]}")
+		db.data[newId] = [{'text': 'New chat', 'user': localStorage.usr}]
 		update(newId, db.data[newId])
 	  }
 	  function tryNewUser(e){

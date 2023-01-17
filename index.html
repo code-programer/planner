@@ -11,7 +11,11 @@
   <script>
 	  function tryNewDo(e){
 	  	var newChat = prompt("New chat name")
-		var newId = newChat + Math.floor(Math.random() * 100000000) + newChat;
+		if(res.data.chats.includes(newChat)){
+			alert("chat name already in use.")
+			window.location.reloda()
+		}
+		var newId = newChat;
 		var users = prompt("Users that will join the chat (separated by ', ')").split(", ")
 		users.push(localStorage.usr)
 		res.data.chats.push(newId)

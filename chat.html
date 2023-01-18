@@ -33,12 +33,6 @@
       })
 	window.onload = function(){
 		reload()
-		var myContent = '<!DOCTYPE html>';
-	    
-	    document.open('text/htmlreplace');
-	document.write(myContent + '<html>' + document.getElementsByTagName("html")[0].innerHTML + '</html>');
-	document.close();
-	console.log( frame.contentWindow.document.compatMode );
       tinymce.init({
         selector: '#in',
         plugins: [

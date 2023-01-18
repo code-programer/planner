@@ -5,7 +5,7 @@
 	</head>
 <div scroll="true" id="screen"></div>
 <br><br>
-<input id="in" placeholder="Write here..."><button id="emote" onclick="sendEmote()" style="all:unset"><i class="fa-solid fa-face-smile"></i></button>
+<input id="in" placeholder="Write here...">
 <script>
 	function sendEmote(){
 		var emote = document.createElement("div");
@@ -93,6 +93,16 @@
     	get("63c2bd75dfc68e59d58269b6", "soload")
   }
 	</script>
+	<script>
+  tinymce.init({
+    selector: "#in",
+    plugins: "emoticons",
+    toolbar: "emoticons",
+    toolbar_location: "bottom",
+    menubar: false
+  });
+</script>
+	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 	<script src="https://kit.fontawesome.com/0494e38872.js" crossorigin="anonymous"></script>
   <script src="main.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.js"></script>

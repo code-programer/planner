@@ -16,11 +16,12 @@
 		var newP = document.createElement("p");
 		newP.innerHTML = html;
   		var newDiv = document.createElement("div");
-  		newDiv.innerHTML = "<br>";
+  		newDiv.innerHTML = "";
 		newDiv.appendChild(newP)
  		var currentDiv = document.getElementById("screen");
   		currentDiv.appendChild(newDiv);
 		newP.classList.add(calas);
+		newDiv.styles.
 	}
 	function send(){
 		var c = new URLSearchParams(window.location.search).get('c');
@@ -159,6 +160,7 @@
 		border-radius: 10px 10px 0 10px;
 		width: 60%;
 		right: -100px;
+		    padding: 10;
 	}
 	.notmine{
 		position: relative;
@@ -167,6 +169,7 @@
 		border-radius: 10px 10px 10px 0;
 		width: 60%;
 		left: 0px;
+		    padding: 10;
 	}
 </style>
 </html>

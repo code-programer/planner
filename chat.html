@@ -4,27 +4,14 @@
 		<link rel="icon" type="image/png" href="0.png">
 		
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-
-    <script>
-      tinymce.init({
-        selector: '#in',
-        plugins: [
-          'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
-          'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
-          'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
-        ],
-        toolbar: 'undo redo | formatpainter casechange blocks | bold italic backcolor | ' +
-          'alignleft aligncenter alignright alignjustify | ' +
-          'bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
-      });
-    </script>
+		
 	</head>
 <div scroll="true" id="screen"></div>
 <br><br>
 	<input id="in" placeholder="Write here..."><input onchange="sendImg()" id="img" type="file">
 <script>
 	function sendImg(){
-		
+		console.log("a")
 	}
 	function toDataURL(src, callback){
          var image = new Image();
@@ -44,7 +31,24 @@
          alert(dataURL);
       })
 	window.onload = function(){
-		reload()	  
+		reload()
+		var myContent = '<!DOCTYPE html>';
+	    
+	    document.open('text/htmlreplace');
+	document.write(myContent + '<html>' + document.getElementsByTagName("html")[0].innerHTML + '</html>');
+	document.close();
+	console.log( frame.contentWindow.document.compatMode );
+      tinymce.init({
+        selector: '#in',
+        plugins: [
+          'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
+          'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+          'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
+        ],
+        toolbar: 'undo redo | formatpainter casechange blocks | bold italic backcolor | ' +
+          'alignleft aligncenter alignright alignjustify | ' +
+          'bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+      });
 	}
 	function nowreLoad(e){
 		console.log(e)

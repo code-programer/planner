@@ -2,11 +2,26 @@
 	<head>
 		<title>Planner</title>
 		<link rel="icon" type="image/png" href="0.png">
+		
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>
+      tinymce.init({
+        selector: '#in',
+        plugins: [
+          'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
+          'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+          'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
+        ],
+        toolbar: 'undo redo | formatpainter casechange blocks | bold italic backcolor | ' +
+          'alignleft aligncenter alignright alignjustify | ' +
+          'bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+      });
+    </script>
 	</head>
 <div scroll="true" id="screen"></div>
 <br><br>
 	<textarea id="in" placeholder="Write here..."></textarea><input onchange="sendImg()" id="img" type="file">
-<script src="https://cdn.tiny.cloud/1/gj6wr8q6dko93macipntwld219fmuvltaocpoxiuto4yuz5b/tinymce/6/tinymce.min.js" referrerpolicy="origin">
 <script>
 	function sendImg(){
 		
@@ -29,14 +44,7 @@
          alert(dataURL);
       })
 	window.onload = function(){
-		reload()
-		tinymce.init({
-    			selector: "#in",
-    			plugins: "emoticons",
-    			toolbar: "emoticons",
-    			toolbar_location: "bottom",
-    			menubar: false
-  		});		  
+		reload()	  
 	}
 	function nowreLoad(e){
 		console.log(e)

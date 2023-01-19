@@ -14,7 +14,7 @@
 		document.getElementById("in").value = "<img src='" + e + "'>";
 		send()
 	}
-	const fileInput = document.querySelector('img');
+	const fileInput = document.querySelector('#img');
 
     // Listen for the change event so we can capture the file
     fileInput.addEventListener('change', (e) => {
@@ -80,7 +80,8 @@
 			else{
 				user = "notmine";
 			}
-     			write(chat[m].text, user)
+     			write(chat[m].text, user
+			document.getElementById("screen").scrollTo(document.getElementById("screen").scrollY + 100, document.getElementById("screen").scrollX)
     		}
 	}
 	function userLoad(e){

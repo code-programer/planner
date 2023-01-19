@@ -25,7 +25,6 @@
         const reader = new FileReader();
         reader.onloadend = () => {
             sendImg(reader.result);
-            // Logs data:<type>;base64,wL2dvYWwgbW9yZ...
         };
         reader.readAsDataURL(file);
     });
@@ -203,6 +202,9 @@
 		width: 58%;
 		left: 0px;
 		    padding: 10;
+	}
+	img{
+		width: 58%;
 	}
 </style>
 </html>

@@ -81,7 +81,8 @@
 				user = "notmine";
 			}
      			write(chat[m].text, user)
-			document.getElementById("screen").scrollTo(document.getElementById("screen").scrollY + 100, document.getElementById("screen").scrollX)
+			var clientHeight = document.getElementById('screen').clientHeight;
+			document.getElementById("screen").scrollTo(clientHeight + 200, 0)
     		}
 	}
 	function userLoad(e){

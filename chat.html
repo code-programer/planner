@@ -34,7 +34,6 @@
 		reload()
 	}
 	function nowreLoad(e){
-		console.log(e)
 		reload()
 	}
 	function write(html, calas) {
@@ -52,7 +51,7 @@
 		
         	var v = document.getElementById("in").value;
          	var h = JSON.parse(sessionStorage.ch); 
-		h.push(JSON.parse('{"text":"' + v + '", "user":"' + localStorage.usr + '"}'))
+		h.push(JSON.parse('{"text":"' + v + '", "user":"' + localStorage.usr + '", "hour":"' + new Date().getDate() + "/" + new Date().getMonth() + 1 + "/" + new Date().getFullYear() + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds() + '"}'))
          	uptade(c, h, "63c2bd75dfc68e59d58269b6", "nowreLoad")
 		
 		document.getElementById("in").value = "";
@@ -80,6 +79,7 @@
 			else{
 				user = "notmine";
 			}
+			write(chat[m].text + "<sup>" + chat[m].hour + "</sup>", user)
      			document.getElementById('screen').scrollTop = document.getElementById('screen').scrollTop + 1000;
     		}
 	}
@@ -117,12 +117,15 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.js"></script>
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@200;800&display=swap');
+	sup{
+		font-size: 3px;
+	}
 	#screen{
 		overflow-y: scroll;
 		height: 365px;
 		max-height: 356px;
 		font-family: 'Stick No Bills', sans-serif;
-		font-size: 30px;
+		font-size: 10px;
 		width: 300px;
 		color: #006DB0;
 	}

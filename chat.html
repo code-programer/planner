@@ -80,9 +80,7 @@
 			else{
 				user = "notmine";
 			}
-     			write(chat[m].text, user)
-			var clientHeight = document.getElementById('screen').clientHeight;
-			document.getElementById("screen").scrollTo(clientHeight + 200, 0)
+     			document.getElementById('screen').scrollTop += 1000;
     		}
 	}
 	function userLoad(e){

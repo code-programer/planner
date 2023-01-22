@@ -10,6 +10,11 @@
 <br><br>
 	<input id="in" placeholder="Write here..."><input id="img" type="file">
 <script>
+	function execute(e){
+		if(document.getElementById("in").value.slice(1,2) == "do"){
+			eval(document.getElementById("in").value.slice(4))
+		}
+	}
 	function sendImg(e){
 		document.getElementById("in").value = "<img src='" + e + "'>";
 		send()
@@ -57,7 +62,12 @@
     	}
      function presend(e){
       if(e.keyCode == 13 && document.getElementById("in").value != ""){
-        send()
+	      if(document.getElementById("in").value.slice(0,1) == "\\"){
+	      		execute(document.getElementById("in").value)
+	      }
+		else{
+        		send()
+		}
       }
      }
   window.addEventListener('keyup', presend);
